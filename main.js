@@ -42,9 +42,6 @@ function addNote() {
 
         // Clear boxes:
         clearBoxes(taskBox, dateBox, timeBox);
-
-        // Focus on task box:
-        focusFirstBox();
     };
 }
 
@@ -58,9 +55,6 @@ function saveToStorage() {
 function loadFromStorage() {
     const json = localStorage.getItem("todoList");
     todoList = json ? JSON.parse(json) : [];
-
-    // Focus on task box:
-    focusFirstBox();
 }
 
 // Display array:
@@ -248,12 +242,6 @@ function clearBoxes(box1, box2, box3) {
     box3.value = "";
 }
 
-// Focus on task box:
-function focusFirstBox() {
-    const taskBox = document.getElementById("taskBox");
-    taskBox.focus();
-}
-
 // Loading local storage for notes container and archive at user login:
 function loadTodoListAndArchive() {
     loadFromStorage();
@@ -277,9 +265,6 @@ function openArchive() {
 // Close archive:
 function closeArchive() {
     document.getElementById("mySideArchive").style.width = "0";
-
-    // Focus on first box:
-    focusFirstBox();
 }
 
 // Add note to archive:
