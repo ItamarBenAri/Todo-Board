@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TODO Board</title>
+    <link rel="icon" href="assets/images/favicon.png">
+    <script defer src="main.js"></script>
+    <link rel="stylesheet" href="style.css">
+
+<body onload="loadTodoListAndArchive()">
+
+
+    <!-- Archive -->
+    <div id="mySideArchive" class="archive">
+        <div>
+            <a href="#" title="Close" class="closeBtn" onclick="closeArchive()">&times;</a>
+            <button class="deleteAllBtn"><a href="#" title="Delete all" onclick="deleteAllArchiveNotes()">Delete
+                    all</a></button>
+            <h2 class="archiveHead">Archive</h2>
+        </div>
+        <div id="archive"></div>
+    </div>
+
+    <button class="archiveBtn">
+        <a id="archive" title="Archive" onclick="openArchive()">Archive Notes</a>
+    </button>
+
+
+    <!-- Page head -->
+    <div class="head">
+        <h3>My Task Board</h3>
+    </div>
+
+    <!-- Form -->
+    <div class="formContainer">
+
+        <form onsubmit="addNote()">
+            <table>
+                <tbody>
+                    <tr>
+                        <td>Task: </td>
+                        <td><input type="text" class="taskBox" id="taskBox" size="30" placeholder="Enter your task"
+                                required></td>
+                    </tr>
+                    <tr>
+                        <td>Date: </td>
+                        <td><input type="date" class="dateBox" id="dateBox" required>
+                    </tr>
+                    </td>
+                    <tr>
+                        <td>Time: </td>
+                        <td><input type="time" class="timeBox" id="timeBox" required></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td class="btnTd"><button>Add</button> &nbsp; &nbsp; &nbsp; &nbsp; <button type="reset"
+                                onclick="focusFirstBox()">Clear</button></td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <!-- Pop message -->
+            <div id="popMessage"></div>
+
+        </form>
+    </div>
+
+    <!-- Sort button -->
+    <button class="sortBtn" onclick="displayNoteByDate()">Sort By Date</button>
+
+    <!-- Notes container -->
+    <div id="container"></div>
+
+
+</body>
+
+</html>

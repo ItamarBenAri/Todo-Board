@@ -1,0 +1,296 @@
+html,
+body {
+    background-image: url("assets/images/Bulletin\ board\ tile.jpg");
+    font-family: "Papyrus";
+}
+
+
+/* Heads style */
+.head>h3,
+.archiveHead {
+    text-align: center;
+    font-size: xx-large;
+    text-shadow: 2px 2px 5px #000;
+    margin: 0;
+}
+
+
+/* Form style */
+form {
+    text-align: center;
+    padding: 10px;
+}
+
+.formContainer {
+    background-image: url("assets/images/notebook\ paper.png");
+    width: 450px;
+    height: 160px;
+    margin: 20px;
+    padding: 10px;
+    background-size: cover;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+table {
+    width: 100%;
+    padding-left: 55px;
+    padding-top: 17px;
+    text-align: left;
+    font-weight: bold;
+}
+
+tr>td:first-child {
+    width: 20%;
+}
+
+.taskBox,
+.dateBox,
+.timeBox {
+    border-bottom: 1px solid darkgrey;
+    border-color: transparent;
+    font-size: 15px;
+    background: transparent;
+}
+
+.taskBox:focus,
+.dateBox:focus,
+.timeBox:focus {
+    outline: none;
+}
+
+.taskBox::-webkit-input-placeholder,
+.dateBox::-webkit-input-placeholder,
+.timeBox::-webkit-input-placeholder {
+    padding-left: 5px;
+    font-size: 15px;
+    color: #3c3c3c;
+}
+
+
+/* Pop error message for past future */
+#openPopMessage {
+    position: fixed;
+    background-color: rgba(255, 255, 255, 0.25);
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 999;
+    visibility: visible;
+    opacity: 1;
+    pointer-events: auto;
+    transition: all 0.7s;
+}
+
+#openPopMessage>div {
+    width: 400px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 2em;
+    background: white;
+    border-radius: 1rem;
+}
+
+#openPopMessage .popMessageClose {
+    color: #aaa;
+    line-height: 50px;
+    font-size: 80%;
+    position: absolute;
+    right: 0;
+    text-align: center;
+    top: 0;
+    width: 70px;
+    text-decoration: none;
+}
+
+#openPopMessage .popMessageClose:hover {
+    color: black;
+}
+
+#openPopMessage>div>div:first-child {
+    color: inherit;
+    text-decoration: none;
+}
+
+#openPopMessage div:not(:last-of-type) {
+    margin-bottom: 15px;
+}
+
+#openPopMessage .errMessage {
+    font-size: x-large;
+}
+
+
+/* Notes style */
+.note {
+    width: 242px;
+    height: 241px;
+    margin: 20px;
+    padding: 10px;
+    display: inline-block;
+    background-image: url("assets/images/note.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    position: relative;
+}
+
+.note>div:first-child {
+    overflow: auto;
+    height: 75%;
+    margin-top: 20px;
+    font-size: xx-large;
+    text-align: center;
+    font-weight: bold;
+}
+
+.xBox {
+    display: none;
+}
+
+.note:hover .xBox {
+    display: block;
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.note>div:first-child::-webkit-scrollbar {
+    display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.note>div:first-child {
+    -ms-overflow-style: none;
+    /* IE and Edge */
+    scrollbar-width: none;
+    /* Firefox */
+}
+
+.note>div:nth-child(2) {
+    border-top: 1px solid black;
+}
+
+tr:last-child>td:last-child {
+    padding-top: 10px;
+}
+
+
+/* Buttons style: */
+.note>button {
+    position: absolute;
+    top: 3px;
+    right: 3px;
+    border: none;
+    background-color: transparent;
+}
+
+button:hover {
+    color: white;
+}
+
+button {
+    background: #ab761a;
+    border: 0;
+    border-radius: .375rem;
+    font-size: 1rem;
+    font-weight: bold;
+    font-family: "Papyrus";
+    line-height: 0.2;
+    padding: 1rem 1.25rem;
+    position: relative;
+    transition: transform .2s;
+    touch-action: manipulation;
+}
+
+button:not(:disabled):hover {
+    transform: scale(1.15);
+}
+
+.sortBtn {
+    margin-left: 20px;
+}
+
+#doneBtn {
+    float: right;
+    font-size: small;
+    margin-top: 8px;
+    color: gold;
+    padding: 10px 10px 10px 10px;
+}
+
+#doneBtn:hover {
+    color: white;
+}
+
+.archiveBtn {
+    margin: 10px;
+}
+
+/* Archive style: */
+.archive {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: rgb(227, 164, 81);
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+}
+
+#archive {
+    padding-bottom: 60px;
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.archive::-webkit-scrollbar {
+    display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.archive:first-child {
+    -ms-overflow-style: none;
+    /* IE and Edge */
+    scrollbar-width: none;
+    /* Firefox */
+}
+
+.archive a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: black;
+    display: block;
+    transition: 0.3s;
+}
+
+.archive a:hover {
+    color: #FA2D2D;
+}
+
+.archive .closeBtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+
+.archive .deleteAllBtn {
+    position: absolute;
+    padding: 8px 8px 8px 8px;
+    top: 25px;
+    left: 25px;
+}
+
+.archive .deleteAllBtn a {
+    font-size: small;
+    padding: 2px;
+}
+
+.archive .deleteAllBtn a:hover {
+    color: white;
+}
